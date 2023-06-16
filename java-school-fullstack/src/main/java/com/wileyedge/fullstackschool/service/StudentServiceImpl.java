@@ -12,14 +12,14 @@ import java.util.List;
 public class StudentServiceImpl implements StudentServiceInterface {
 
 	// YOUR CODE STARTS HERE
-
+	
+	@Autowired
 	StudentDao studentDao;
+	@Autowired
 	CourseServiceImpl courseService;
 
-	@Autowired
-	public StudentServiceImpl(StudentDao studentDao, CourseServiceImpl courseService) {
+	public StudentServiceImpl(StudentDao studentDao) {
 		this.studentDao = studentDao;
-		this.courseService = courseService;
 	}
 
 	// YOUR CODE ENDS HERE
