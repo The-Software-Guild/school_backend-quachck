@@ -6,12 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TeacherMapper implements RowMapper<Teacher> {
-    @Override
-    public Teacher mapRow(ResultSet rs, int rowNum) throws SQLException {
-        //YOUR CODE STARTS HERE
+	@Override
+	public Teacher mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// YOUR CODE STARTS HERE
 
-        return null;
+		Teacher teacher = new Teacher();
+		teacher.setTeacherId(rs.getInt("tid"));
+		teacher.setTeacherFName(rs.getString("fName"));
+		teacher.setTeacherLName(rs.getString("lName"));
+		teacher.setDept(rs.getString("dept"));
 
-        //YOUR CODE ENDS HERE
-    }
+		return teacher;
+
+		// YOUR CODE ENDS HERE
+	}
 }
