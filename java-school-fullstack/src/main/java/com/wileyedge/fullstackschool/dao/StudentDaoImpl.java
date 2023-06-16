@@ -48,7 +48,7 @@ public class StudentDaoImpl implements StudentDao {
 	public Student findStudentById(int id) {
 		// YOUR CODE STARTS HERE
 
-		String sql = "SELECT * FROM student WHERE studentId = ?";
+		String sql = "SELECT * FROM student WHERE sid = ?";
 		return jdbcTemplate.queryForObject(sql, new StudentMapper(), id);
 
 		// YOUR CODE ENDS HERE
@@ -68,7 +68,7 @@ public class StudentDaoImpl implements StudentDao {
 	public void deleteStudent(int id) {
 		// YOUR CODE STARTS HERE
 
-		String sql = "DELETE FROM student WHERE studentId = ?";
+		String sql = "DELETE FROM student WHERE sid = ?";
 		jdbcTemplate.update(sql, id);
 
 		// YOUR CODE ENDS HERE

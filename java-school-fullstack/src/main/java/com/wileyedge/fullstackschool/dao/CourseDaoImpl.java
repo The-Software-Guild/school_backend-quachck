@@ -55,31 +55,31 @@ public class CourseDaoImpl implements CourseDao {
 	@Override
 	public void updateCourse(Course course) {
 		// YOUR CODE STARTS HERE
-		
+
 		String sql = "UPDATE course SET courseCode = ?, courseDesc = ?, teacherId = ? WHERE cid = ?";
 		jdbcTemplate.update(sql, course.getCourseName(), course.getCourseDesc(), course.getTeacherId(),
 				course.getCourseId());
-		
+
 		// YOUR CODE ENDS HERE
 	}
 
 	@Override
 	public void deleteCourse(int id) {
 		// YOUR CODE STARTS HERE
-		
+
 		String sql = "DELETE FROM course WHERE cid = ?";
 		jdbcTemplate.update(sql, id);
-		
+
 		// YOUR CODE ENDS HERE
 	}
 
 	@Override
 	public void deleteAllStudentsFromCourse(int courseId) {
 		// YOUR CODE STARTS HERE
-		
-		String sql = "DELETE FROM student_course WHERE courseId = ?";
+
+		String sql = "DELETE FROM course_student WHERE course_id = ?";
 		jdbcTemplate.update(sql, courseId);
-		
+
 		// YOUR CODE ENDS HERE
 	}
 }
